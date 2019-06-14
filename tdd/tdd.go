@@ -2,18 +2,17 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func isPrime(number int) bool {
-	sqrtRoot := math.Sqrt(float64(number))
+	// sqrtRoot := math.Sqrt(float64(number))
 
 	switch number {
 	case 0, 1:
 		return false
 	}
 
-	for j := 2; j <= int(sqrtRoot); j++ {
+	for j := 2; j < number; j++ {
 		if number%j == 0 {
 			return false
 		}

@@ -29,6 +29,6 @@ func benchmarkPrime(i int, b *testing.B) {
 	}
 }
 
-func BenchmarkPrime1(b *testing.B)    { benchmarkPrime(1, b) }
-func BenchmarkPrime100(b *testing.B)  { benchmarkPrime(100, b) }
-func BenchmarkPrime1000(b *testing.B) { benchmarkPrime(1000, b) }
+func BenchmarkPrime1(b *testing.B)     { benchmarkPrime(1, b) }
+func BenchmarkPrime100(b *testing.B)   { benchmarkPrime(100, b) }
+func BenchmarkPrime10000(b *testing.B) { benchmarkPrime(10000, b) }
