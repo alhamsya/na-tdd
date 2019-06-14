@@ -11,7 +11,8 @@ var mock sqlmock.Sqlmock
 
 func TestMain(m *testing.M) {
 	db, mock, _ = sqlmock.New()
-	initDB()
+
+	// Uncomment to test db connection, don't forget to install db first
 	// initDB()
 	defer db.Close()
 
@@ -31,7 +32,7 @@ func TestShouldRead(t *testing.T) {
 
 func TestShouldInsert(t *testing.T) {
 	test := "testing"
-	mock.ExpectExec("INSERT INTO data").
+	mock.ExpectExec("INSERT INTO users").
 		WillReturnResult(sqlmock.NewResult(0, 1))
 
 	insertToDB(test)
