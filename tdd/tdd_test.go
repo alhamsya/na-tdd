@@ -3,24 +3,21 @@ package main
 import "testing"
 
 func Test_isPrime(t *testing.T) {
-	type args struct {
-		number int
-	}
 	tests := []struct {
-		name string
-		args args
-		want bool
+		name   string
+		number int
+		want   bool
 	}{
-		{"0", args{0}, false},
-		{"13", args{13}, true},
-		{"4", args{4}, false},
-		{"104729", args{104729}, true},
+		{"0", 0, false},
+		{"13", 13, true},
+		{"4", 4, false},
+		{"104729", 104729, true},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isPrime(tt.args.number); got != tt.want {
-				t.Errorf("isPrime(%d) = %v, want %v", tt.args.number, got, tt.want)
+			if got := isPrime(tt.number); got != tt.want {
+				t.Errorf("isPrime(%d) = %v, want %v", tt.number, got, tt.want)
 			}
 		})
 	}
